@@ -36,7 +36,7 @@ static void do_cat(const char *path) {
 	while (1) {
 		if (word_num = read(fd, buff, sizeof(buff) < 0)) print_error(path);
 		if (word_num == 0) break;
-		if (write(1, buff, word_num) < 0) print_error(path);
+		if (write(STDOUT_FILENO, buff, word_num) < 0) print_error(path);
 		
 	}
 	if (close(fd) < 0) print_error(path);
